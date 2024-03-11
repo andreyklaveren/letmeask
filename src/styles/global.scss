@@ -1,0 +1,22 @@
+@import './_variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+:root {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 62.5%; //Transforma 1rem em 10px
+    color: $textColor;
+  }
+
+body {
+    font-size: 1.6rem;
+    background-color: $backgroundColor;
+}
+ 
