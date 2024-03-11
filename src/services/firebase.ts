@@ -1,3 +1,4 @@
+
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
@@ -12,7 +13,7 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_APP_ID
   };
 
-  const app = initializeApp(firebaseConfig); // tenta tirar o 'const app ='
+  export const app = initializeApp(firebaseConfig); // tenta tirar o 'const app ='
 
   const auth = getAuth(app);
   const database = getDatabase(app);

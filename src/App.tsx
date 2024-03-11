@@ -1,9 +1,18 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import { Home } from "./pages/Home";
 import { NewRoom } from "./pages/NewRoom";
 
-export function App() {
+export default function App() {
   return (
-   <NewRoom />
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" Component={Home}/>
+          <Route path="/rooms/new" Component={NewRoom}/>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
