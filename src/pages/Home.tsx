@@ -1,23 +1,23 @@
+import { useNavigate } from "react-router-dom";
+
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 
 import { Button } from '../components/Button';
 
 import '../styles/auth.scss'
+import { useAuth } from "../hooks/useAuth";
 
 export function Home() {
     // Função para autenticar o usuario e redirecionar o usuario para página decriação de sala a partir de um button
     const navigate = useNavigate();
+    const {user, signInWithGoogle} = useAuth()
 
-        function handleCreateRoom() {
-            const provider = new GoogleAuthProvider()
-            const auth = getAuth();
-            signInWithPopup(auth, provider).then(result => {
-                console.log(result)
-            })
+        async function handleCreateRoom() {
+            if (!user) {
+                await signInWithGoogle()
+            }
             navigate("/rooms/new")
         }
     // ###---### // ###---### // ###---### // ###---### 
