@@ -8,7 +8,6 @@ import { AuthContextProvider } from "./contexts/AuthContext";
 export default function App() {
   return (
     <div>
-      <Home />
       <BrowserRouter>
         <AuthContextProvider>
           <Routes>
